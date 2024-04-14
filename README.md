@@ -16,5 +16,5 @@ Fyle assessment for Front end internship
    
 -Topics are highlighted in blue boxes .
 
-Website Link: http://127.0.0.1:3000/index.html
+Website Link: https://melodic-paprenjak-bce084.netlify.app
 
