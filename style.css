@@ -1,0 +1,292 @@
+.frame {
+
+  display:block;
+  flex-direction: row;
+  justify-content: left;
+  
+}
+body{
+  background-color: var(--primary-color);
+}
+
+
+body:not(.dark-mode){
+  --primary-color: #ffffff;
+  --secondary-color:#0c0c0c;
+  --third-color:#0c228e;
+  --fourth-color:#ffffff;
+
+
+}
+.dark-mode{
+    --primary-color: #0b0b0bc0;
+    --secondary-color:#dadcdcdd;
+    --third-color: #76d1f0;
+    --fourth-color:#ffffff;
+}
+
+  
+
+
+.modes{
+  width: 210vh;
+  display:flex;
+  flex-direction:row;
+  justify-content: right;
+  top: 10px;
+  right: 20px;
+}
+
+.modes img{
+  height: 40px;
+  width: 40px;
+}
+
+nav ul{
+  flex:1;
+  text-align: right;
+  background: transparent;
+}
+
+
+.frame .div {
+  color: var(--secondary-color);
+  height: 80px;
+  position:static;
+}
+
+.frame .text-wrapper {
+  position: absolute;
+  top: 135px;
+  left: 230px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 40;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+a{
+  color: var(--third-color);
+}
+
+.frame .profile-pic {
+  position: absolute;
+  width: 155px;
+  height: 155px;
+  border-radius:50%;
+  top: 20px;
+  left: 29px;
+  border: 2px solid;
+  object-fit: cover;
+}
+
+.frame .text-wrapper-2 {
+  position: absolute;
+  top: 27px;
+  left: 230px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: var(--secondary-color);
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .text-wrapper-3 {
+  position: absolute;
+  top: 70px;
+  left: 230px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--secondary-color);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .location {
+  position: absolute;
+  width: 18px;
+  height: 19px;
+  top: 98px;
+  left: 230px;
+}
+
+.frame .text-wrapper-4 {
+  position: absolute;
+  top: 100px;
+  left: 253px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--secondary-color);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .link {
+  position: absolute;
+  width: 21px;
+  height: 19px;
+  top: 200px;
+  left: 19px;
+}
+
+.frame .text-wrapper-5 {
+  position: absolute;
+  top: 200px;
+  left: 45px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: lightblue;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+
+.loader {
+  border: 8px solid var(--primary-color);
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  display: none;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.pagination {
+  
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  
+}
+
+#repositories {
+  color:var(--secondary-color);
+  margin-top: 5px;
+}
+
+.repository {
+  border: 1px solid var(--primary-color);
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 48%; 
+  display: inline-block;
+  box-sizing:border-box;
+  vertical-align: top;
+}
+
+@media (max-width: 768px) {
+  .repository {
+      width: 100px;
+      margin-right: 0; 
+  }
+}
+
+
+.repository {
+  border: 2px solid var(--secondary-color);
+  padding: 15px;
+  margin-bottom: 15px;
+  width: calc(50% - 10px); 
+  display: inline-block;
+  box-sizing:border-box;
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+.column {
+  margin-bottom: 15px; 
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.topic-box {
+  background-color: #3498db;
+  color: #fff;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+
+
+.search-box{
+  width: 10px;
+  bottom: 1000px;
+  background:transparent;
+  margin: 1px auto 10px;
+  border-radius: 0px;
+  height: 100px;
+  align-content:space-around;
+  padding: 1px 0px;
+
+
+}
+.search-box .input{
+height: 5px;
+}
+ 
+.row{
+  display:flex;
+  align-items: center;
+  padding: 0px 1px;
+}
+
+input{
+  flex: 1;
+  height: 30px;
+  background:var(--fourth-color);
+  border: 1;
+  border-radius: 5px;
+  outline: 0;
+  font-size: 18px;
+  color: #333;
+}
+.search-box .input button{
+  background: transparent;
+  border: 0;
+  height: 10px 100px;
+  outline:0;
+}
+
+button{
+  width:230px;
+  height: 20px;
+  color:#3f9eca;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+::placeholder{
+  color: #555;
+}
+
+.pagination button{
+  height: 35px;
+  width:80px;
+  color: #0c0c0c;
+  font-size: 13px;
+}
+
+.dark_btn{
+  background: transparent;
+  border: transparent;
+}

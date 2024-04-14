@@ -1,0 +1,117 @@
+.frame {
+
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    
+  }
+  body{
+    background-color: var(--primary-color);
+  }
+  
+  
+  body:not(.dark-mode){
+    --primary-color: #ffffff;
+    --secondary-color:#0c0c0c;
+    --third-color:#0c228e;
+    --fourth-color:#ffffff;
+  
+  
+  }
+  .dark-mode{
+      --primary-color: #0b0b0bc0;
+      --secondary-color:#dadcdcdd;
+      --third-color: #76d1f0;
+      --fourth-color:#ffffff;
+  }
+    
+  .frame .div {
+    color: var(--secondary-color);
+    width: 100px;
+    height: 100px;
+    position:static;
+  }
+  
+  
+  .loader {
+    border: 8px solid var(--primary-color);
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    display: none;
+    margin: 20px auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .pagination {
+    
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    
+  }
+  
+  #repositories {
+    color:var(--secondary-color);
+    margin-top: 1px;
+  }
+  
+  .repository {
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 48%; 
+    display: inline-block;
+    box-sizing:border-box;
+    vertical-align: top;
+  }
+  
+  @media (max-width: 768px) {
+    .repository {
+        width: 100px; 
+        margin-right: 0; 
+    }
+  }
+  
+ 
+  .repository {
+    border: 2px solid var(--secondary-color);
+    padding: 15px;
+    margin-bottom: 15px;
+    width: calc(50% - 10px); 
+    display: inline-block;
+    box-sizing:border-box;
+    vertical-align: top;
+    margin-right: 10px; 
+  }
+  
+  .column {
+    margin-bottom: 10px; 
+  }
+  
+  .topics {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .topic-box {
+    background-color: #3498db;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  
+  

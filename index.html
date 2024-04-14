@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Fyle Internship Assessment</title>
+    <script src="https://kit.fontawesome.com/8e0f6a8a28.js" crossorigin="anonymous"></script>
+   <link rel="icon" href="assets/icon.jpeg" type="image/x-icon">  </head>
+  <body onload="onload()">
+    <div class="modes">
+       <nav> 
+        <ul>
+          <button  class="dark_btn" onclick="darkmode()">
+            <i class="fa-solid fa-circle-half-stroke"></i></button>
+        
+    </ul>
+    </nav>
+    </div>
+        
+    <div class="frame">
+        
+      <div class="div">
+        <div class="text-wrapper">
+        <a href="https://twitter.com/FyleHQ">Twitter:https://twitter.com/john_doe</a></div>
+        <img class="profile-pic" src="assets/icon.jpeg" />
+        <div class="text-wrapper-2">John Doe</div>
+        <div class="text-wrapper-3">Bio  goes here  </div>
+        <img class="location" src="https://img.icons8.com/ultraviolet/40/marker.png" id="loc" />
+        <div class="text-wrapper-4">Orlando</div>
+        <img class="link" src="assets/githubd.svg" id="git"/>
+        <div class="text-wrapper-5">
+            <a href="https://github.com/fylein">http://github.com/john_deo</a></div>
+            
+      </div>
+    </div>
+    <!--Search Bar-->
+    <div class="search-box">
+      <div class="input">
+    <input type="text" id="searchInput" placeholder="Enter repo name" onkeypress="handleKeyPress(event)">
+    <button onclick="searchRepos()">Search</i></button>
+  
+
+    <script>
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                searchRepos();
+            }
+        }
+
+        async function searchRepos() {
+            const defaultUser = 'fylein';
+            const searchInput = document.getElementById('searchInput');
+
+            if (searchInput.value.trim() === '') {
+                alert('Please enter a search term.');
+                return;
+            }
+
+            try {
+                const response=await fetch(`https://api.github.com/users/${defaultUser}/repos`);
+                const repos= await response.json();
+
+                if (repos.length ===0) {
+                    alert(`No repositories found for user '${defaultUser}'.`);
+                } else {
+                    const matchingRepos = repos.filter(repo => repo.name.includes(searchInput.value));
+
+                    if (matchingRepos.length ===0) {
+                        alert(`No matching repositories found for the search term '${searchInput.value}'.`);
+                    } else {
+                        const repoNames=matchingRepos.map(repo => repo.name).join('\n');
+                        const confirmation =confirm(`Matching repositories:\n${repoNames}\n\nDo you want to open them on GitHub?`);
+
+                        if (confirmation) {
+                            matchingRepos.forEach(repo => {
+                                const repoUrl = repo.html_url;
+                                window.open(repoUrl, '_blank');
+                            });
+
+                            searchInput.value = '';
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching data from GitHub API:', error);
+                alert('An error occurred while fetching data.');
+            }
+        }
+      
+    </script>
+    </div>
+    </div>
+     <!----------search bar ends here------------>
+    <div id="loader" class="loader">
+    </div>
+    <div id="repositories"></div>
+    <div id="pagination" class="pagination">
+        <span id="pageInfo"></span>
+        <a href="page2.html">
+        <button type="button" >Next</button> 
+    </a>   </div>
+</div>
+
+<script src="darkmode.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="scripts.js"></script>
+  </body>
+</html>
